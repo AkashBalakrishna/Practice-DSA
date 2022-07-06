@@ -1,0 +1,15 @@
+C:\Akash\Dev\Git\Practice-DSA\dotnet core\bin\Debug\net6.0\dotnet core.exe
+C:\Akash\Dev\Git\Practice-DSA\dotnet core\bin\Debug\net6.0\dotnet core.deps.json
+C:\Akash\Dev\Git\Practice-DSA\dotnet core\bin\Debug\net6.0\dotnet core.runtimeconfig.json
+C:\Akash\Dev\Git\Practice-DSA\dotnet core\bin\Debug\net6.0\dotnet core.dll
+C:\Akash\Dev\Git\Practice-DSA\dotnet core\bin\Debug\net6.0\dotnet core.pdb
+C:\Akash\Dev\Git\Practice-DSA\dotnet core\obj\Debug\net6.0\dotnet core.csproj.AssemblyReference.cache
+C:\Akash\Dev\Git\Practice-DSA\dotnet core\obj\Debug\net6.0\dotnet core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Akash\Dev\Git\Practice-DSA\dotnet core\obj\Debug\net6.0\dotnet core.AssemblyInfoInputs.cache
+C:\Akash\Dev\Git\Practice-DSA\dotnet core\obj\Debug\net6.0\dotnet core.AssemblyInfo.cs
+C:\Akash\Dev\Git\Practice-DSA\dotnet core\obj\Debug\net6.0\dotnet core.csproj.CoreCompileInputs.cache
+C:\Akash\Dev\Git\Practice-DSA\dotnet core\obj\Debug\net6.0\dotnet core.dll
+C:\Akash\Dev\Git\Practice-DSA\dotnet core\obj\Debug\net6.0\refint\dotnet core.dll
+C:\Akash\Dev\Git\Practice-DSA\dotnet core\obj\Debug\net6.0\dotnet core.pdb
+C:\Akash\Dev\Git\Practice-DSA\dotnet core\obj\Debug\net6.0\dotnet core.genruntimeconfig.cache
+C:\Akash\Dev\Git\Practice-DSA\dotnet core\obj\Debug\net6.0\ref\dotnet core.dll
