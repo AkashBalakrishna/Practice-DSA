@@ -1,0 +1,71 @@
+let arr = [1,2,3,4,5,6,7];
+
+let tree = createTree(arr);
+console.log(TraverseLevelOrder(tree));
+
+function TraverseLevelOrder(tree){
+  let result = [];
+  let levelOrderTraversal = (queue) =>{
+    //NOTE : The Difference inferred from this is -> Recursive method has a recursive call and a conditional block.
+    //whereas, the iterative method does that using conditional while loop
+
+    //Recursive Approach
+    // if(queue.length){
+    //   let node = queue.shift(); // for Level Order Traversal
+    //   // let node = queue.pop(); // for Pre Order Traversal or for BFS
+    //   result.push(node.val);
+    //   if(node.left)
+    //     queue.push(node.left);
+    //   if(node.right)
+    //     queue.push(node.right);
+    //   levelOrderTraversal(queue);
+    // }
+
+    //Iterative Approach
+    while(queue.length){
+      let node = queue.shift(); // for Level Order Traversal
+      // let node = queue.pop(); // for Pre Order Traversal or for BFS
+      result.push(node.val);
+      if(node.left)
+        queue.push(node.left);
+      if(node.right)
+        queue.push(node.right);
+    }
+  }
+
+  let queue = [tree];
+  levelOrderTraversal(queue);
+  return result;
+}
+
+function createTree(arr){
+  let queue = [];
+
+  let addNode = (item) => {
+    let inserted = false;
+      while(queue.length && !inserted){
+        let node = queue[0];
+        if(!node.left){
+          node.left = {val: item, left: undefined, right: undefined};
+          inserted = true;
+          queue.push(node.left);
+        }
+        else if(!node.right){
+          node.right = {val: item, left: undefined, right: undefined}
+          inserted = true;
+          queue.push(node.right);
+        }
+        if(node.right && node.left){
+          queue.shift();
+        }
+      }
+  }
+
+  let node = {val: arr.shift(), left: undefined, right: undefined};
+  queue.push(node);
+
+  for (const item of arr) {
+    addNode(item);
+  }
+  return node;
+}
