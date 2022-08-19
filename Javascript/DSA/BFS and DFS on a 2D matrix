@@ -1,0 +1,54 @@
+let arr = [
+  [1,2,3,4,5],
+  [6,7,8,9,10],
+  [11,12,13,14,15],
+  [16,17,18,19,20]
+];
+
+let visitLog;
+let length;
+let breadth;
+let result = [];
+let navigator;
+
+init(arr);
+Traverse(arr, {x: 0, y: 0}, [], result);
+console.log(result);
+
+
+function init(arr){
+  length = arr.length;
+  breadth = arr[0].length;
+  visitLog = new Array(length).fill(0).map(() => new Array(breadth).fill(false));
+  navigator = [{x: -1, y :0}, {x: 0, y :1}, {x: 1, y :0}, {x: 0, y : -1}]
+}
+
+function nodeCanbeVisited(currentPosition){
+  if(currentPosition.x >= length || currentPosition.x < 0 ||
+    currentPosition.y >= breadth || currentPosition.y < 0){
+      return false;
+    }
+  if(visitLog[currentPosition.x][currentPosition.y]){
+    return false;
+  }
+  return true;
+}
+
+function Traverse(arr, currentPosition, pipe, result){
+  if(nodeCanbeVisited(currentPosition)){
+    visitLog[currentPosition.x][currentPosition.y] = true;
+    result.push(arr[currentPosition.x][currentPosition.y]);
+
+    let top = {x: currentPosition.x + navigator[0].x, y: currentPosition.y + navigator[0].y };
+    let right = {x: currentPosition.x + navigator[1].x, y: currentPosition.y + navigator[1].y };
+    let bottom = {x: currentPosition.x + navigator[2].x, y: currentPosition.y + navigator[2].y };
+    let left = {x: currentPosition.x + navigator[3].x, y: currentPosition.y + navigator[3].y };
+
+    pipe.push(...[top,right,bottom,left]);
+    while(pipe.length){
+      let next = pipe.shift(); //for Queue for BFS
+      //let next = pipe.pop(); //for Stack for DFS
+      Traverse(arr, next, pipe, result);
+    }
+  }
+}
